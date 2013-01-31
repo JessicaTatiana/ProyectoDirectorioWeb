@@ -105,17 +105,18 @@ public class Portada extends JFrame {
 		
 		JButton btnInformacion = new JButton("Informacion");
 		btnInformacion.setFont(new Font("Arial", Font.PLAIN, 12));
-		btnInformacion.setBackground(Color.WHITE);
+		
 		btnInformacion.setBounds(133, 142, 112, 23);
 		contentPane.add(btnInformacion);
 		
 		JButton btnClasificados = new JButton("Clasificados");
+		btnClasificados.setForeground(new Color(0, 0, 255));
 		btnClasificados.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnClasificados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnClasificados.setBackground(Color.WHITE);
+		
 		btnClasificados.setBounds(241, 142, 112, 23);
 		contentPane.add(btnClasificados);
 		
@@ -187,8 +188,16 @@ public class Portada extends JFrame {
 		txtPublicidad.setColumns(10);
 		
 		JButton btnPublicar = new JButton("Publicar");
+		btnPublicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				ExitoClasificado miExito = new ExitoClasificado();
+				miExito.setVisible(true);
+				miExito.setDefaultCloseOperation(1);
+				dispose();
+			}
+		});
 		btnPublicar.setFont(new Font("Arial", Font.PLAIN, 12));
-		btnPublicar.setBackground(UIManager.getColor("Button.disabledShadow"));
 		btnPublicar.setBounds(133, 370, 91, 23);
 		contentPane.add(btnPublicar);
 		
@@ -199,6 +208,7 @@ public class Portada extends JFrame {
 		contentPane.add(btnCancelar);
 		
 		JButton btnCrearNuevo = new JButton("Crear nuevo");
+		btnCrearNuevo.setForeground(new Color(0, 0, 255));
 		btnCrearNuevo.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnCrearNuevo.setBounds(347, 197, 122, 23);
 		contentPane.add(btnCrearNuevo);
